@@ -6,5 +6,8 @@ const init = require('./core/init')
 
 init().then(() => {
   require('./core/write')
-  require('./core/server')
+  
+  if (process.argv[2] === 'start') {
+    require('./core/server')
+  }
 })

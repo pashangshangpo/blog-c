@@ -6,7 +6,7 @@ const fs = require('fs')
 const {distPath, join} = require('./path')
 
 http.createServer((req, res) => {
-  const path = join(distPath, req.url)
+  const path = join(distPath, decodeURI(req.url))
   let content = ''
 
   try {

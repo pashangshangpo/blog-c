@@ -16,7 +16,8 @@ module.exports = content => {
   for (let section of config) {
     const arr = section.split(':')
     const name = arr[0]
-    const val = arr[1].trim()
+    const val = arr.slice(1, -1).join(':').trim()
+
     res.config[name] = val
   }
 

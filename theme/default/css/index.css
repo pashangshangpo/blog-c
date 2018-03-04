@@ -1,4 +1,58 @@
-body {
-  margin: 100px;
-  background-color: pink;
+html,
+body,
+div,
+ul,
+li,
+section,
+p,
+main {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.box {
+  width: 720px;
+  margin: 0 auto;
+}
+
+.box > header {
+  padding: 10px 0 30px;
+  text-align: center;
+}
+
+.box > header h1 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.box > header p {
+  font-size: 16px;
+  font-family: 华文仿宋;
+}
+
+.box .article-list a {
+  display: flex;
+  height: 35px;
+
+  color: #0366d6;
+  line-height: 35px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.box .article-list a > span {
+  flex: 1;
+  
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.box .article-list a > time {
+  font-size: 14px;
+  color: #6a737d;
 }

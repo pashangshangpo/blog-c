@@ -5,7 +5,6 @@ const fs = require('fs')
 const template = require('art-template')
 const init = require('./core/init')
 
-// const config = require(resolveApp('theme/default/config.json'))
 
 init().then(() => {
 })

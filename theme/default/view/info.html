@@ -5,16 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{name}}</title>
+  <title>{{name}}-{{info.title}}</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/info.css">
 </head>
 
 <body>
-  <header>
-    <h1>{{signature}}</h1>
-  </header>
-  <main>
-    <p>{{info.content}}</p>
-  </main>
+  <div class="box">
+    <header>
+      <h1>{{info.title}}</h1>
+    </header>
+    <main>
+      {{info.content}}
+    </main>
+  </div>
 </body>
 
 </html>

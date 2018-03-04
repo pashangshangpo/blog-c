@@ -12,7 +12,12 @@ const {
 } = require('./path')
 
 const createFile = () => {
-  fs.mkdirSync(distPath)
+  try {
+    fs.mkdirSync(distPath)
+  }
+  catch (err) {
+  }
+
   fs.mkdirSync(articlePath)
   fs.mkdirSync(cssPath)
   fs.mkdirSync(jsPath)
@@ -25,9 +30,13 @@ module.exports = () => {
       resolve()
     }
     catch (err) {
-      rimraf(distPath, () => {
-        createFile()
-        resolve()
+      rimraf(articlePath, () => {
+        rimraf(cssPath, () => {
+          rimraf(jsPath, () => {
+            createFile()
+            resolve()
+          })
+        })
       })
     }
   })

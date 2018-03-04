@@ -16,6 +16,7 @@ const {
   distPath,
   join
 } = require('./path')
+const parseMd = require('./parseMd')
 
 const curThemeConfig = require(curThemeConfigPath)
 
@@ -38,11 +39,11 @@ const outHtml = () => {
 
   for (let fileName of mdDir) {
     const title = fileName.replace('.md', '')
-    const content = fs.readFileSync(join(mdPath, fileName)).toString()
+    const {config, content} = parseMd(fs.readFileSync(join(mdPath, fileName)).toString())
 
     const item = {
       title,
-      createTime: Date.now(),
+      createTime: config.createTime,
       url: `/article/${title}.html`,
       content
     }

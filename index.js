@@ -6,4 +6,5 @@ const init = require('./core/init')
 
 init().then(() => {
   require('./core/write')
+  require('./core/server')
 })

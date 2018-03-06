@@ -20,6 +20,8 @@ const parseMd = require('./parseMd')
 
 const curThemeConfig = require(curThemeConfigPath)
 
+template.defaults.escape = false
+
 const outCssJs = () => {
   const cssDir = fs.readdirSync(curThemeCssPath)
   const jsDir = fs.readdirSync(curThemeJsPath)

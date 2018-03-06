@@ -3,10 +3,11 @@
  * markdown解析
  */
 module.exports = content => {
-  const configReg = /-{3}\n+([\s\S]+?\n+)-{3}([^\B]+)/img
+  const configReg = /-{3}\n+([\s\S]+?\n+)-{3}([\s\S]+)/img
   const configRes = configReg.exec(content)
 
   const config = configRes[1].trim().split('\n')
+
   const res = {
     config: {},
     content: configRes[2].trim()

@@ -3,7 +3,7 @@
  * markdown解析
  */
 const marked = require('marked')
-const highlightjs = require('highlight.js')
+// const highlightjs = require('highlight.js')
 const renderer = new marked.Renderer()
 
 // 从新页面打开
@@ -16,12 +16,12 @@ renderer.image = (href, title, text) => {
   return `<img src="${href}" title="${title || ''}" alt="${text || ''}" ondblclick="window.open('${href}');">`
 }
 
-renderer.code = (code, language) => {
-  const validLang = !!(language && highlightjs.getLanguage(language))
-  const highlighted = validLang ? highlightjs.highlight(language, code).value : code
+// renderer.code = (code, language) => {
+//   const validLang = !!(language && highlightjs.getLanguage(language))
+//   const highlighted = validLang ? highlightjs.highlight(language, code).value : code
 
-  return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`
-}
+//   return `<code class="prettyprint ${language}">${highlighted}</code>`
+// }
 
 marked.setOptions({
   renderer: renderer

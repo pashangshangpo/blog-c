@@ -4,6 +4,7 @@
  */
 const marked = require('marked')
 const highlightjs = require('highlight.js')
+const formatDate = require('../util/formatDate')
 const renderer = new marked.Renderer()
 
 // 从新页面打开
@@ -41,7 +42,10 @@ module.exports = content => {
   for (let section of config) {
     const arr = section.split(':')
     const name = arr[0]
-    const val = arr.slice(1).join(':').trim()
+    let val = arr.slice(1).join(':').trim()
+    if (name === 'createTime') {
+      val = formatDate(Number(val), 'yyyy-MM-dd hh:mm:ss')
+    }
 
     res.config[name] = val
   }

@@ -4,6 +4,13 @@
   margin: 0 auto;
 }
 
+.box > header h1 {
+  padding: 10px 0 30px;
+  margin-bottom: 6px;
+  text-align: center;
+  font-size: 25px;
+}
+
 .box main {
   padding: 20px 0 50px;
 }

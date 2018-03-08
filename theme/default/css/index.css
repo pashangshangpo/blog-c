@@ -1,5 +1,5 @@
 .box {
-  width: 720px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -14,8 +14,13 @@
 }
 
 .box > header p {
+  margin-top: 18px;
   font-size: 16px;
   font-family: 华文仿宋;
+}
+
+.box .article-list {
+  margin: 0 12px;
 }
 
 .box .article-list a {
@@ -28,7 +33,7 @@
   border-bottom: 1px dashed #ccc;
 }
 
-.box .article-list a > span {
+.box .article-list a .title {
   flex: 1;
   
   white-space: nowrap;
@@ -37,5 +42,6 @@
 }
 
 .box .article-list a > time {
+  font-family: serif;
   color: #6a737d;
 }

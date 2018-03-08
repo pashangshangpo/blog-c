@@ -14,13 +14,13 @@ const {
 const createFile = () => {
   try {
     fs.mkdirSync(distPath)
+    fs.mkdirSync(cssPath)
+    fs.mkdirSync(jsPath)
   }
   catch (err) {
   }
 
   fs.mkdirSync(articlePath)
-  fs.mkdirSync(cssPath)
-  fs.mkdirSync(jsPath)
 }
 
 module.exports = () => {
@@ -31,12 +31,7 @@ module.exports = () => {
     }
     catch (err) {
       rimraf(articlePath, () => {
-        rimraf(cssPath, () => {
-          rimraf(jsPath, () => {
-            createFile()
-            resolve()
-          })
-        })
+        resolve()
       })
     }
   })

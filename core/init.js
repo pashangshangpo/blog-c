@@ -14,7 +14,17 @@ const {
 const createFile = () => {
   try {
     fs.mkdirSync(distPath)
+  }
+  catch (err) {
+  }
+
+  try {
     fs.mkdirSync(cssPath)
+  }
+  catch (err) {
+  }
+
+  try {
     fs.mkdirSync(jsPath)
   }
   catch (err) {

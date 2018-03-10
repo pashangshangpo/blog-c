@@ -12,11 +12,31 @@
 }
 
 .box main {
+  position: relative;
   padding: 20px 0 50px;
 }
 
+.go-home {
+  position: absolute;
+  right: -80px;
+  padding: 5px;
+
+  font-size: 13px;
+  color: #467bc1;
+  border: 1px solid #a0b7d6;
+  border-radius: 4px;
+}
+
+.go-home-top {
+  top: 0;
+}
+
+.go-home-bottom {
+  bottom: 0;
+}
+
 @media screen and (min-width: 640px) {
-  .box main {
+  .box {
     padding-bottom: 300px;
   }
 }

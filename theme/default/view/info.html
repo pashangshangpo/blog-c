@@ -12,11 +12,13 @@
 </head>
 <body>
   <div class="box">
-    <header>
-      <h1 data-pc>{{info.title}}</h1>
+    <header data-pc>
+      <h1>{{info.title}}</h1>
     </header>
     <main class="markdown-body">
       {{info.content}}
+      <a class="go-home go-home-top" href="/">返回主页</a>
+      <a class="go-home go-home-bottom" href="/">返回主页</a>
     </main>
   </div>
   <script src="/js/init.js"></script>

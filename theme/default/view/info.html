@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/markdown.css">
   <link rel="stylesheet" href="/css/monokai-sublime.css">
+  <link rel="stylesheet" href="/css/gitment.css">
   <link rel="stylesheet" href="/css/info.css">
 </head>
 <body>
@@ -34,10 +35,22 @@
       </div>
     </div>
     <a class="go-home go-home-bottom" href="/">返回主页</a>
-    <div id="disqus_thread"></div>
+    <div id="comments"></div>
   </div>
   <script src="/js/init.js"></script>
-  <script src="/js/info.js"></script>
   <script src="/js/pv.js"></script>
+  <script src="/js/gitment.js"></script>
+  <script>
+    const gitment = new Gitment({
+      owner: 'pashangshangpo',
+      repo: 'pashangshangpo',
+      oauth: {
+        client_id: '858772be76a336fa182a',
+        client_secret: '21581b0b9d386167ecb8744c0f2fcd6bc3042242'
+      }
+    });
+
+    gitment.render('comments');
+  </script>
 </body>
 </html>

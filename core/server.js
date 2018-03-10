@@ -10,7 +10,7 @@ http.createServer((req, res) => {
   let content = ''
 
   try {
-    content = fs.readFileSync(path).toString()
+    content = path.indexOf('.png') > -1 ? fs.readFileSync(path) : fs.readFileSync(path).toString()
   }
   catch (err) {
   }

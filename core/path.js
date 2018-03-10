@@ -13,6 +13,7 @@ const pathConfig = {
   articlePath: resolveApp('dist/article'),
   cssPath: resolveApp('dist/css'),
   jsPath: resolveApp('dist/js'),
+  imgPath: resolveApp('dist/img'),
   configPath: resolveApp('config.json'),
   mdPath: resolveApp('md')
 }
@@ -34,6 +35,7 @@ module.exports = Object.assign(
     curThemeConfigPath: join(curThemePath, 'config.json'),
     curThemeJsPath: join(curThemePath, 'js'),
     curThemeCssPath: join(curThemePath, 'css'),
+    curThemeImgPath: join(curThemePath, 'img'),
     curThemeViewPath,
     curThemeInfo: join(curThemeViewPath, 'info.html'),
     curThemeIndex: join(curThemeViewPath, 'index.html')

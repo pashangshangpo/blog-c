@@ -6,8 +6,10 @@ const template = require('art-template')
 const {
   curThemeCssPath,
   curThemeJsPath,
+  curThemeImgPath,
   cssPath,
   jsPath,
+  imgPath,
   mdPath,
   curThemeInfo,
   curThemeIndex,
@@ -22,9 +24,10 @@ const curThemeConfig = require(curThemeConfigPath)
 
 template.defaults.escape = false
 
-const outCssJs = () => {
+const copyDir = () => {
   const cssDir = fs.readdirSync(curThemeCssPath)
   const jsDir = fs.readdirSync(curThemeJsPath)
+  const imgDir = fs.readdirSync(curThemeImgPath)
 
   for (let fileName of cssDir) {
     fs.writeFileSync(join(cssPath, fileName), fs.readFileSync(join(curThemeCssPath, fileName)).toString())
@@ -32,6 +35,10 @@ const outCssJs = () => {
 
   for (let fileName of jsDir) {
     fs.writeFileSync(join(jsPath, fileName), fs.readFileSync(join(curThemeJsPath, fileName)).toString())
+  }
+
+  for (let fileName of imgDir) {
+    fs.writeFileSync(join(imgPath, fileName), fs.readFileSync(join(curThemeImgPath, fileName)), 'binary')
   }
 }
 
@@ -69,5 +76,5 @@ const outHtml = () => {
   )
 }
 
-outCssJs()
+copyDir()
 outHtml()

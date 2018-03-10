@@ -8,6 +8,7 @@ const {
   articlePath,
   cssPath,
   jsPath,
+  imgPath,
   resolveApp
 } = require('./path')
 
@@ -36,7 +37,7 @@ const createFile = path => {
 
 module.exports = () => {
   return new Promise(async resolve => {
-    createFile([distPath, cssPath, jsPath])
+    createFile([distPath, cssPath, jsPath, imgPath])
 
     if (fsExistsSync(articlePath)) {
       await new Promise(resolve => {

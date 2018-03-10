@@ -11,35 +11,42 @@ const {
   resolveApp
 } = require('./path')
 
-const createFile = () => {
+const fsExistsSync = path => {
   try {
-    fs.mkdirSync(distPath)
+    fs.accessSync(path, fs.F_OK)
   }
-  catch (err) {
+  catch (e) {
+    return false
   }
 
-  try {
-    fs.mkdirSync(cssPath)
-  }
-  catch (err) {
+  return true
+}
+
+const createFile = path => {
+  if (!Array.isArray(path)) {
+    path = [path]
   }
 
-  try {
-    fs.mkdirSync(jsPath)
-  }
-  catch (err) {
-  }
-
-  try {
-    fs.mkdirSync(articlePath)
-  }
-  catch (err) {
-  }
+  path.forEach(item => {
+    if (!fsExistsSync(item)) {
+      fs.mkdirSync(item)
+    }
+  })
 }
 
 module.exports = () => {
-  return new Promise(resolve => {
-    createFile()
+  return new Promise(async resolve => {
+    createFile([distPath, cssPath, jsPath])
+
+    if (fsExistsSync(articlePath)) {
+      await new Promise(resolve => {
+        rimraf(articlePath, (err, out) => {
+          resolve()
+        })
+      })
+    }
+
+    createFile(articlePath)
     resolve()
   })
 }

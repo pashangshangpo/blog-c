@@ -4,11 +4,17 @@
   margin: 0 auto;
 }
 
+.box > header {
+  margin-top: 18px;
+}
+
 .box > header h1 {
-  padding: 10px 0 30px;
   margin-bottom: 6px;
-  text-align: center;
+  padding: 10px 0 30px;
+
   font-size: 25px;
+  color: #597ba9;
+  text-align: center;
 }
 
 .box main {

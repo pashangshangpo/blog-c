@@ -30,6 +30,14 @@
   text-decoration: none
 }
 
+.markdown-body a {
+  color: #4183c4;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
 .markdown-body .absent {
   color: #cb2431
 }

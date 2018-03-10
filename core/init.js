@@ -30,19 +30,16 @@ const createFile = () => {
   catch (err) {
   }
 
-  fs.mkdirSync(articlePath)
+  try {
+    fs.mkdirSync(articlePath)
+  }
+  catch (err) {
+  }
 }
 
 module.exports = () => {
   return new Promise(resolve => {
-    try {
-      createFile()
-      resolve()
-    }
-    catch (err) {
-      rimraf(articlePath, () => {
-        resolve()
-      })
-    }
+    createFile()
+    resolve()
   })
 }
